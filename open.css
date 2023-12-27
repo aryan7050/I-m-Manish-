@@ -1,148 +1,150 @@
 body {
-      margin: 0;
-        position: relative;
-          width: 100vw;
-            height: 100vh;
-              background-image: linear-gradient(0deg, #e87d7d 0%, #11a4ff 100%);
-              }
+  margin: 0;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
 
-              #envelope {
-                position: absolute;
-                  top: calc(50% - 150px);
-                    left: calc(50% - 150px);
-                      width: 300px;
-                        height: 300px;
-                        }
+  background-image: linear-gradient(0deg, #e87d7d 0%, #11a4ff 100%);
+}
 
-                        #envelope > * {
-                          position: absolute;
-                            top: 0;
-                              left: 0;
-                                display: none;
-                                }
+#envelope {
+  position: absolute;
+  top: calc(50vh - 200px);
+  left: calc(50vw - 150px);
+  width: 300px;
+  height: 300px;
+}
 
-                                #back {
-                                  display: block;
-                                    z-index: 0;
-                                    }
+#envelope > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
 
-                                    #front {
-                                      display: block;
-                                        z-index: 10;
-                                        }
+#back {
+  display: block;
+  z-index: 0;
+}
 
-                                        #top {
-                                          display: block;
-                                            z-index: 11;
-                                            }
+#front {
+  display: block;
+  z-index: 10;
+}
 
-                                            #top.animate,
-                                            #front.animate,
-                                            #back.animate,
-                                            #envelope button.animate {
-                                              opacity: 0;
-                                                transition: opacity 1s;
-                                                  transition-delay: 1s;
-                                                  }
+#top {
+  display: block;
+  z-index: 11;
+}
 
-                                                  #letter {
-                                                    display: flex;
-                                                      flex-direction: column;
-                                                        justify-content: space-around;
-                                                          align-items: center;
-                                                            background-color: rgb(255, 255, 255);
-                                                              padding: 20px;
-                                                                z-index: 5;
-                                                                  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
-                                                                    overflow: hidden;
-                                                                      font-size: 16px;
-                                                                        margin: 15px;
-                                                                          border-radius: 8px;
-                                                                            transition: transform 1s;
-                                                                            }
+#top.animate,
+#front.animate,
+#back.animate,
+#envelope button.animate {
+  opacity: 0;
+  transition: opacity 1s;
+  transition-delay: 1s;
+}
 
-                                                                            h1 {
-                                                                              margin: 0;
-                                                                                padding-top: 12px;
-                                                                                  font-size: 24px;
-                                                                                    color: #333;
-                                                                                    }
+#letter {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  padding: 5px;
+  z-index: 5;
+  left: 15px;
+  right: 15px;
+  bottom: 5px;
+  top: 105px;
 
-                                                                                    h1 span {
-                                                                                      color: red;
-                                                                                      }
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1),
+    0px 1px 2px 0px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  font-size: 16px;
+}
+h1 {
+  padding-top: 12px;
+}
+h1 span {
+  color: red;
+}
+p {
+  font-size: 17px;
+  padding: 2px;
+  line-height: 20px;
+}
+#letter img {
+  background-size: cover;
+}
+#letter.animate {
+  animation: makebig 2s forwards;
+  animation-delay: 1s;
+}
 
-                                                                                      p {
-                                                                                        font-size: 17px;
-                                                                                          padding: 2px;
-                                                                                            line-height: 20px;
-                                                                                              color: #555;
-                                                                                              }
+@keyframes makebig {
+  0% {
+    top: 105px;
+    left: 15px;
+    right: 15px;
+    bottom: 5px;
+    font-size: 16px;
+  }
+  33% {
+    top: -100px;
+    left: 15px;
+    right: 15px;
+    bottom: 150px;
+    font-size: 16px;
+  }
+  100% {
+    top: -0px;
+    left: -55px;
+    right: -25px;
+    bottom: -100px;
+    font-size: 24px;
+  }
+}
 
-                                                                                              #letter img {
-                                                                                                width: 100%;
-                                                                                                  height: auto;
-                                                                                                    border-radius: 8px;
-                                                                                                      margin-top: 10px;
-                                                                                                      }
+#letter h1 {
+  font-size: inherit;
+}
 
-                                                                                                      #letter.animate {
-                                                                                                        animation: makebig 2s forwards;
-                                                                                                          animation-delay: 1s;
-                                                                                                          }
+#letter h2 {
+  font-size: inherit;
+}
 
-                                                                                                          @keyframes makebig {
-                                                                                                            0% {
-                                                                                                                transform: scale(1);
-                                                                                                                  }
-                                                                                                                    100% {
-                                                                                                                        transform: scale(1.2);
-                                                                                                                          }
-                                                                                                                          }
+#letter img {
+  height: 50%;
+}
+a {
+  color: red;
+}
+#envelope button {
+  display: block;
+  z-index: 15;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgb(255, 89, 0);
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  top: calc(200px - 25px);
+  left: calc(150px - 25px);
+  transition: transform 1s, background-color 1s, color 1s;
+}
 
-                                                                                                                          #letter h1,
-                                                                                                                          #letter h2 {
-                                                                                                                            font-size: inherit;
-                                                                                                                              color: #333;
-                                                                                                                              }
-
-                                                                                                                              #letter img {
-                                                                                                                                height: 50%;
-                                                                                                                                  object-fit: cover;
-                                                                                                                                    border-radius: 8px;
-                                                                                                                                    }
-
-                                                                                                                                    a {
-                                                                                                                                      color: red;
-                                                                                                                                      }
-
-                                                                                                                                      #envelope button {
-                                                                                                                                        display: block;
-                                                                                                                                          z-index: 15;
-                                                                                                                                            width: 50px;
-                                                                                                                                              height: 50px;
-                                                                                                                                                border-radius: 50%;
-                                                                                                                                                  border: none;
-                                                                                                                                                    background-color: rgb(255, 89, 0);
-                                                                                                                                                      font-weight: bold;
-                                                                                                                                                        text-align: center;
-                                                                                                                                                          color: white;
-                                                                                                                                                            cursor: pointer;
-                                                                                                                                                              margin: 15px;
-                                                                                                                                                                transition: transform 0.5s, background-color 0.5s, color 0.5s;
-                                                                                                                                                                }
-
-                                                                                                                                                                #envelope button:hover {
-                                                                                                                                                                  background-color: white;
-                                                                                                                                                                    transform: scale(1.2);
-                                                                                                                                                                      color: rgb(255, 89, 0);
-                                                                                                                                                                        transition: transform 0.5s, background-color 0.5s, color 0.5s;
-                                                                                                                                                                        }
-
-                                                                                                                                                                        .text h1 {
-                                                                                                                                                                          color: rgb(255, 255, 255);
-                                                                                                                                                                            text-align: center;
-                                                                                                                                                                              font-size: 28px;
-                                                                                                                                                                              }
-                                                                                                                                                                              
+#envelope button:hover {
+  background-color: white;
+  transform: scale(1.5);
+  color: rgb(255, 89, 0);
+  transition: transform 1s, background-color 1s, color 1s;
+}
+.text h1 {
+  color: rgb(255, 255, 255);
+  text-align: center;
 }
